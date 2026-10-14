@@ -11,8 +11,8 @@ window.SITE_CONFIG = {
   logo: '',
 
   contact: {
-    whatsapp: '', // الرقم بالصيغة الدولية بدون + أو أصفار، مثل: 970599123456
-    phone: '', // مثل: +970599123456
+    whatsapp: '970597657810', // الرقم بالصيغة الدولية بدون + أو أصفار، مثل: 970599123456
+    phone: '+970597657810', // مثل: +970599123456
     email: '', // مثل: info@example.com
     instagram: '', // اسم الحساب فقط، مثل: smt.tech
     facebook: '' // رابط الصفحة كاملاً، مثل: https://facebook.com/smt.tech
