@@ -80,6 +80,15 @@
     return { key: x[0], label: x[1], href: x[2](v), text: x[3](v), icon: ICONS[x[0]] }
   })
 
+  // أزرار «تواصل معنا»: واتساب مباشرة إذا كان الرقم موجوداً، وإلا صفحة التواصل
+  var wa = window.SiteContacts.filter(function (x) { return x.key === 'whatsapp' })[0]
+  if (wa)
+    document.querySelectorAll('a[data-contact]').forEach(function (a) {
+      a.href = wa.href
+      a.target = '_blank'
+      a.rel = 'noopener'
+    })
+
   var list = document.getElementById('contact-list')
   if (list) {
     if (!window.SiteContacts.length) {

@@ -422,3 +422,7 @@ details.faq p {
 .brand-text small {
   letter-spacing: 0.1em;
 }
+
+details.faq p a {
+  font-weight: 700;
+}
