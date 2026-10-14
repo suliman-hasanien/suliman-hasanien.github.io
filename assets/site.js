@@ -47,8 +47,10 @@
   if (footer) {
     footer.className = 'site-footer'
     footer.innerHTML =
-      '<div class="wrap"><span>© ' + new Date().getFullYear() + ' ' + esc(cfg.company) + ' — جميع الحقوق محفوظة</span>' +
-      '<nav>' + nav(false) + '</nav></div>'
+      '<div class="wrap"><div class="foot-brand"><b>' + esc(cfg.product) + '</b><span>' + esc(cfg.company) + '</span>' +
+      (cfg.tagline ? '<small>' + esc(cfg.tagline) + '</small>' : '') + '</div>' +
+      '<nav>' + nav(false) + '</nav>' +
+      '<div class="copy">© ' + new Date().getFullYear() + ' ' + esc(cfg.company) + '</div></div>'
   }
 
   // طرق التواصل: الحقول الفارغة لا تظهر

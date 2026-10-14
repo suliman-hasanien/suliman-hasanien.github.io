@@ -3,7 +3,8 @@
  * أي حقل تتركه فارغاً '' يختفي تلقائياً من الموقع.
  */
 window.SITE_CONFIG = {
-  company: 'SMT للتكنولوجيا',
+  company: 'SMT TECHNOLOGIES',
+  tagline: 'Accounting & Inventory Software',
   product: 'جَرْد',
 
   // مسار ملف الشعار داخل مجلد الموقع، مثل: 'assets/logo.png' — فارغ = الشعار المؤقت

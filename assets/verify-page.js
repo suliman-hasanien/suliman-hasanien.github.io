@@ -34,7 +34,7 @@
       return show('bad', '✗', 'ترخيص غير صالح', 'بيانات الترخيص غير صحيحة أو تم التلاعب بها.')
     if (r.status === 'expired')
       show('bad', '✗', 'ترخيص غير صالح', 'انتهت صلاحية الترخيص بتاريخ ' + date(r.payload.expiresAt))
-    else show('ok', '✓', 'ترخيص صالح', 'نسخة أصلية مُرخّصة من SMT للتكنولوجيا')
+    else show('ok', '✓', 'ترخيص صالح', 'نسخة أصلية مُرخّصة من SMT TECHNOLOGIES')
 
     var p = r.payload
     document.getElementById('d-customer').textContent = p.customer

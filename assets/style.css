@@ -385,3 +385,40 @@ details.faq p {
     margin-inline-end: 14px;
   }
 }
+
+/* هوية التذييل كما في الشعار: جَرْد / SMT TECHNOLOGIES / Accounting & Inventory Software */
+.site-footer .wrap {
+  align-items: center;
+}
+.foot-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.foot-brand b {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--brand);
+}
+.foot-brand span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brand-2);
+}
+.foot-brand small {
+  direction: ltr;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.site-footer .copy {
+  width: 100%;
+  font-size: 12px;
+  direction: ltr;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.brand-text small {
+  letter-spacing: 0.1em;
+}
