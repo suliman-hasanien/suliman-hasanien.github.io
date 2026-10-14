@@ -24,7 +24,7 @@
   var links = [
     ['home', 'index.html', 'الرئيسية'],
     ['verify', 'v/', 'التحقق من الترخيص'],
-    ['contact', 'contact.html', 'تواصل معنا']
+    ['contact', 'contact.html', 'الدعم']
   ]
   function nav(cls) {
     return links
@@ -89,18 +89,16 @@
       a.rel = 'noopener'
     })
 
+  // صفحة الدعم: أزرار فقط بدون عرض الأرقام — واتساب أولاً باسم «تواصل معنا»
   var list = document.getElementById('contact-list')
   if (list) {
     if (!window.SiteContacts.length) {
-      list.innerHTML = '<div class="card note">سيتم إضافة طرق التواصل قريباً.</div>'
+      list.innerHTML = '<p class="note">سيتم إضافة طرق التواصل قريباً.</p>'
     } else {
-      list.innerHTML = window.SiteContacts.map(function (x) {
+      list.innerHTML = window.SiteContacts.map(function (x, i) {
         var ext = /^https?:/.test(x.href) ? ' target="_blank" rel="noopener"' : ''
-        return (
-          '<a class="card contact-item" href="' + esc(x.href) + '"' + ext + '>' +
-          '<span class="ico">' + x.icon + '</span>' +
-          '<span><b>' + esc(x.label) + '</b><span class="ltr">' + esc(x.text) + '</span></span></a>'
-        )
+        var label = x.key === 'whatsapp' ? 'تواصل معنا' : x.label
+        return '<a class="btn ' + (i === 0 ? 'btn-primary' : 'btn-ghost') + ' btn-ico" href="' + esc(x.href) + '"' + ext + '>' + x.icon + label + '</a>'
       }).join('')
     }
   }
