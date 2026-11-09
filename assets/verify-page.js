@@ -32,7 +32,9 @@
     if (r.status === 'unlicensed') return show('bad', '✗', 'ترخيص غير صالح', 'هذه النسخة غير مُرخّصة.')
     if (r.status === 'invalid')
       return show('bad', '✗', 'ترخيص غير صالح', 'بيانات الترخيص غير صحيحة أو تم التلاعب بها.')
-    if (r.status === 'expired')
+    if (r.status === 'revoked')
+      show('bad', '✗', 'ترخيص ملغى', 'هذا الترخيص ألغته SMT TECHNOLOGIES — النسخة غير مُرخّصة.')
+    else if (r.status === 'expired')
       show('bad', '✗', 'ترخيص غير صالح', 'انتهت صلاحية الترخيص بتاريخ ' + date(r.payload.expiresAt))
     else show('ok', '✓', 'ترخيص صالح', 'نسخة أصلية مُرخّصة من SMT TECHNOLOGIES')
 
