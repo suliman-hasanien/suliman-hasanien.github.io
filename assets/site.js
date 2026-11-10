@@ -23,16 +23,18 @@
 
   var links = [
     ['home', 'index.html', 'الرئيسية'],
-    ['features', 'index.html#features', 'المميزات'],
-    ['countries', 'index.html#countries', 'الدول'],
-    ['founder', 'founder/', 'المؤسس'],
+    ['features', 'features.html', 'المميزات'],
+    ['countries', 'countries.html', 'الدول'],
+    ['about', 'about.html', 'من نحن'],
+    ['faq', 'faq.html', 'الأسئلة'],
     ['verify', 'v/', 'التحقق'],
-    ['contact', 'contact.html', 'الدعم']
+    ['contact', 'contact.html', 'تواصل معنا']
   ]
   function nav(cls) {
     return links
       .map(function (l) {
-        return '<a href="' + root + '/' + l[1] + '"' + (l[0] === page && cls ? ' class="active"' : '') + '>' + l[2] + '</a>'
+        var on = l[0] === page || (page === 'founder' && l[0] === 'about')
+        return '<a href="' + root + '/' + l[1] + '"' + (on && cls ? ' class="active" aria-current="page"' : '') + '>' + l[2] + '</a>'
       })
       .join('')
   }
@@ -44,16 +46,37 @@
       '<div class="wrap"><a class="brand" href="' + root + '/index.html">' +
       '<span class="brand-logo">' + logo() + '</span>' +
       '<span class="brand-text"><b>' + esc(cfg.product) + '</b><small>' + esc(cfg.company) + '</small></span></a>' +
-      '<nav class="site-nav">' + nav(true) + '</nav></div>'
+      '<button class="nav-toggle" type="button" aria-label="القائمة" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>' +
+      '<nav class="site-nav" id="site-nav">' + nav(true) + '</nav></div>'
+    var tog = header.querySelector('.nav-toggle')
+    tog.addEventListener('click', function () {
+      var open = header.classList.toggle('nav-open')
+      tog.setAttribute('aria-expanded', open ? 'true' : 'false')
+    })
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && header.classList.contains('nav-open')) {
+        header.classList.remove('nav-open')
+        tog.setAttribute('aria-expanded', 'false')
+      }
+    })
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 8)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
   }
   var footer = document.getElementById('site-footer')
   if (footer) {
     footer.className = 'site-footer'
     footer.innerHTML =
-      '<div class="wrap"><div class="foot-brand"><b>' + esc(cfg.product) + '</b><span>' + esc(cfg.company) + '</span>' +
-      (cfg.tagline ? '<small>' + esc(cfg.tagline) + '</small>' : '') + '</div>' +
-      '<nav>' + nav(false) + '</nav>' +
-      '<div class="copy">© ' + new Date().getFullYear() + ' ' + esc(cfg.company) + '</div></div>'
+      '<div class="wrap foot-grid">' +
+      '<div class="foot-brand"><b>' + esc(cfg.product) + '</b><span>' + esc(cfg.company) + '</span>' +
+      (cfg.tagline ? '<small>' + esc(cfg.tagline) + '</small>' : '') +
+      '<p>نظام عربي متكامل للمحاسبة والمخازن ونقاط البيع. صُنع في غزة، فلسطين.</p></div>' +
+      '<div class="foot-col"><h4>روابط</h4><nav>' + nav(false) + '</nav></div>' +
+      '<div class="foot-col"><h4>تواصل</h4><div id="foot-contact"></div></div>' +
+      '</div>' +
+      '<div class="copy">© ' + new Date().getFullYear() + ' ' + esc(cfg.company) + ' · All rights reserved</div>'
   }
 
   // طرق التواصل: الحقول الفارغة لا تظهر
@@ -104,5 +127,14 @@
         return '<a class="btn ' + (i === 0 ? 'btn-primary' : 'btn-ghost') + ' btn-ico" href="' + esc(x.href) + '"' + ext + '>' + x.icon + label + '</a>'
       }).join('')
     }
+  }
+
+  // التذييل: روابط التواصل
+  var fc = document.getElementById('foot-contact')
+  if (fc) {
+    fc.innerHTML = window.SiteContacts.map(function (x) {
+      var ext = /^https?:/.test(x.href) ? ' target="_blank" rel="noopener"' : ''
+      return '<a class="foot-link" href="' + esc(x.href) + '"' + ext + '>' + x.icon + '<span dir="ltr">' + esc(x.text) + '</span></a>'
+    }).join('') + '<span class="foot-place">غزة، فلسطين</span>'
   }
 })()

@@ -4,30 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0f2240">
 <link rel="icon" href="favicon.png">
-<meta name="theme-color" content="#17325a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<title>الدعم والمساعدة — جَرْد</title>
-<link rel="stylesheet" href="assets/style.css?v=202611101321">
+<title>تواصل معنا — جَرْد | SMT TECHNOLOGIES</title>
+<meta name="description" content="تواصل مع فريق جَرْد على واتساب أو بالهاتف، وتحقق من ترخيصك.">
+<meta property="og:title" content="تواصل معنا — جَرْد | SMT TECHNOLOGIES">
+<meta property="og:description" content="تواصل مع فريق جَرْد على واتساب أو بالهاتف، وتحقق من ترخيصك.">
+<meta property="og:image" content="assets/img/shot-home.jpg">
+<link rel="stylesheet" href="assets/style.css?v=202611101549">
+<link rel="stylesheet" href="assets/home.css?v=202611101549">
 </head>
-<body data-root="." data-page="contact">
+<body data-root="." data-page="contact" class="lp">
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
 <header id="site-header"></header>
-<main class="wrap">
-  <h2>الدعم والمساعدة</h2>
-  <details class="card faq"><summary>كيف أتحقق من ترخيصي؟</summary><p>افتح البرنامج ← الإعدادات ← «الترخيص والتحقق»، وامسح رمز QR بكاميرا الجوال. ستفتح صفحة تعرض حالة الترخيص مباشرة.</p></details>
-  <details class="card faq"><summary>ماذا أفعل إذا ظهر «ترخيص غير صالح»؟</summary><p>تأكد أنك مسحت الرمز من البرنامج نفسه وليس من صورة أو رابط معدّل، ثم <a data-contact href="#support-contact">تواصل معنا</a> وأرسل رمز الجهاز الظاهر في شاشة الترخيص لنساعدك.</p></details>
-  <details class="card faq"><summary>ماذا يعني «انتهت صلاحية الترخيص»؟</summary><p>الترخيص أصلي لكن مدته انتهت. <a data-contact href="#support-contact">تواصل معنا</a> لتجديده.</p></details>
-  <details class="card faq"><summary>هل صفحة التحقق تحتاج تشغيل البرنامج أو شبكة المحل؟</summary><p>لا. تعمل من أي جوال متصل بالإنترنت، والتحقق يتم داخل الجوال بالتوقيع الرقمي.</p></details>
-  <div id="support-contact" class="card support-cta">
-    <b>لم تجد إجابة سؤالك؟</b>
-    <span>فريق الدعم جاهز لمساعدتك.</span>
-    <div id="contact-list" class="btn-row"></div>
-  </div>
+<main id="main">
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="index.html">الرئيسية</a> ‹ تواصل معنا</div>
+      
+      <h1>نحن هنا لمساعدتك</h1>
+      <p>سجّل اهتمامك بجَرْد، أو اسأل عن أي شيء — نرد عليك بأسرع وقت.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-cards">
+        <a class="hl-card gold reveal" data-contact href="#"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><h3>واتساب</h3><p>أسرع طريقة للتواصل وتسجيل اهتمامك.</p><span class="go">راسلنا ←</span></a>
+        <a class="hl-card reveal" id="call-card" href="tel:+970597657810"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3>اتصال</h3><p dir="ltr">+970 59 765 7810</p><span class="go">اتصل الآن ←</span></a>
+        <a class="hl-card reveal" href="v/"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>تحقق من ترخيصك</h3><p>امسح رمز QR من البرنامج للتأكد من أن نسختك أصلية.</p><span class="go">صفحة التحقق ←</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <div class="center reveal"><span class="eyebrow">الترخيص والتحقق</span><h2 class="sec-title">أسئلة الدعم</h2></div>
+      <div class="faq-list">
+        <details open><summary>كيف أتحقق من ترخيصي؟</summary><p>افتح البرنامج ← الإعدادات ← «الترخيص والتحقق»، وامسح رمز QR بكاميرا الجوال. ستفتح صفحة تعرض حالة الترخيص مباشرة.</p></details>
+        <details open><summary>ماذا أفعل إذا ظهر «ترخيص غير صالح»؟</summary><p>تأكد أنك مسحت الرمز من البرنامج نفسه وليس من صورة أو رابط معدّل، ثم <a data-contact href="contact.html">تواصل معنا</a> وأرسل رمز الجهاز الظاهر في شاشة الترخيص لنساعدك.</p></details>
+        <details open><summary>ماذا يعني «انتهت صلاحية الترخيص»؟</summary><p>الترخيص أصلي لكن مدته انتهت. <a data-contact href="contact.html">تواصل معنا</a> لتجديده.</p></details>
+        <details open><summary>هل صفحة التحقق تحتاج تشغيل البرنامج أو شبكة المحل؟</summary><p>لا. تعمل من أي جوال متصل بالإنترنت، والتحقق يتم داخل الجوال بالتوقيع الرقمي.</p></details>
+      </div>
+    </div>
+  </section>
 </main>
 <footer id="site-footer"></footer>
-<script src="config.js?v=202611101321"></script>
-<script src="assets/site.js?v=202611101321"></script>
+<script src="config.js?v=202611101549"></script>
+<script src="assets/site.js?v=202611101549"></script>
+<script src="assets/ui.js?v=202611101549"></script>
 </body>
 </html>
