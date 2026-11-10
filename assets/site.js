@@ -23,7 +23,10 @@
 
   var links = [
     ['home', 'index.html', 'الرئيسية'],
-    ['verify', 'v/', 'التحقق من الترخيص'],
+    ['features', 'index.html#features', 'المميزات'],
+    ['countries', 'index.html#countries', 'الدول'],
+    ['founder', 'founder/', 'المؤسس'],
+    ['verify', 'v/', 'التحقق'],
     ['contact', 'contact.html', 'الدعم']
   ]
   function nav(cls) {

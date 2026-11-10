@@ -448,3 +448,20 @@ details.faq p a {
   width: 18px;
   height: 18px;
 }
+
+/* nav-scroll */
+.site-nav {
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+.site-nav::-webkit-scrollbar {
+  display: none;
+}
+.site-nav a {
+  white-space: nowrap;
+}
+.brand-logo img {
+  border-radius: 9px;
+  background: #fff;
+}

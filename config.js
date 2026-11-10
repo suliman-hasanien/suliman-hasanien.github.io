@@ -8,7 +8,7 @@ window.SITE_CONFIG = {
   product: 'جَرْد',
 
   // مسار ملف الشعار داخل مجلد الموقع، مثل: 'assets/logo.png' — فارغ = الشعار المؤقت
-  logo: '',
+  logo: 'assets/img/jard-icon.png',
 
   contact: {
     whatsapp: '970597657810', // الرقم بالصيغة الدولية بدون + أو أصفار، مثل: 970599123456
