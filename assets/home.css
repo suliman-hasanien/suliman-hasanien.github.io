@@ -1060,3 +1060,300 @@ html.rv .reveal.in {
   height: auto;
   object-fit: contain;
 }
+
+/* ===== v4: لمسة فخمة ===== */
+h1, h2, h3, h4,
+.sec-title,
+.brand-text b,
+.foot-brand b,
+.hero-stats b,
+.btn {
+  font-family: 'Alexandria', 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+}
+.sec-title {
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.lp-hero h1,
+.page-hero h1 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+/* أزرار */
+.btn {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn-gold {
+  background: linear-gradient(135deg, #e7c372, #d4a64a 55%, #b8862e);
+  box-shadow: 0 10px 26px rgba(212, 166, 74, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(120%);
+  transition: transform 0.7s ease;
+}
+.btn-gold:hover::after {
+  transform: translateX(-120%);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #3a6db0, #2c5c9c);
+  box-shadow: 0 8px 20px rgba(44, 92, 156, 0.28);
+}
+.btn-glass {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* البطل */
+.lp-hero {
+  position: relative;
+  padding-top: 76px !important;
+}
+.lp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
+  pointer-events: none;
+}
+.lp-hero .wrap {
+  position: relative;
+}
+.lp-hero h1 {
+  font-size: 50px;
+  line-height: 1.25;
+}
+.hero-stats div {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.hero-visual {
+  position: relative;
+  max-width: 1000px;
+  margin: 10px auto 0;
+  width: 100%;
+}
+.hero-shot {
+  position: relative;
+  z-index: 1;
+  border-radius: 16px 16px 0 0;
+  background: #0b1a33;
+  padding: 0;
+}
+.win-bar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  background: linear-gradient(#1c3561, #162c52);
+  direction: ltr;
+}
+.win-bar i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+}
+.win-bar i:first-child {
+  background: #ff6159;
+}
+.win-bar i:nth-child(2) {
+  background: #ffbd2e;
+}
+.win-bar i:nth-child(3) {
+  background: #28c941;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+.orb-a {
+  width: 340px;
+  height: 340px;
+  background: #d4a64a;
+  top: -40px;
+  inset-inline-start: -90px;
+  opacity: 0.28;
+}
+.orb-b {
+  width: 420px;
+  height: 420px;
+  background: #3a6db0;
+  top: 40px;
+  inset-inline-end: -120px;
+  opacity: 0.45;
+}
+.float-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: start;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 18px 40px rgba(6, 14, 28, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: floaty 6s ease-in-out infinite;
+}
+.float-card small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.3;
+}
+.float-card b {
+  font-size: 15px;
+  color: var(--brand);
+  font-family: 'Alexandria', 'Cairo', sans-serif;
+}
+.fc-ico {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+.fc-ico.ok {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+.fc-ico.warn {
+  background: #fff3e0;
+  color: #b26a00;
+}
+.fc-ico.ai {
+  background: var(--gold-soft);
+  color: #a67a1e;
+}
+.fc-a {
+  top: 18%;
+  inset-inline-start: -28px;
+}
+.fc-b {
+  top: 52%;
+  inset-inline-end: -34px;
+  animation-delay: -2s;
+}
+.fc-c {
+  top: 6%;
+  inset-inline-end: 8%;
+  animation-delay: -4s;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-card { animation: none; }
+  .btn:hover { transform: none; }
+}
+@media (max-width: 900px) {
+  .fc-a { inset-inline-start: 6px; top: 10%; }
+  .fc-b { inset-inline-end: 6px; }
+  .fc-c { display: none; }
+}
+@media (max-width: 620px) {
+  .lp-hero h1 { font-size: 31px; }
+  .float-card { padding: 7px 10px; gap: 8px; border-radius: 11px; }
+  .float-card b { font-size: 12.5px; }
+  .float-card small { font-size: 10.5px; }
+  .fc-ico { width: 26px; height: 26px; border-radius: 8px; font-size: 13px; }
+  .fc-a { top: 4%; }
+  .fc-b { top: auto; bottom: 8%; }
+  .win-bar { height: 20px; gap: 5px; padding: 0 8px; }
+  .win-bar i { width: 8px; height: 8px; }
+}
+
+/* شريط القطاعات */
+.industries {
+  padding: 22px 0 !important;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.industries .wrap {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ind-label {
+  font-weight: 800;
+  color: var(--gold);
+  font-size: 14px;
+}
+.industries ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  justify-content: center;
+}
+.industries li {
+  color: #5b6b82;
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+}
+
+/* خلفيات الأقسام */
+.lp section.tint {
+  background-color: #fff;
+  background-image: radial-gradient(rgba(23, 50, 90, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+.fcard,
+.ccard,
+.hl-card {
+  border-radius: 18px;
+}
+.fcard .ico,
+.hl-card .ico {
+  box-shadow: inset 0 0 0 1px rgba(23, 50, 90, 0.06);
+}
+.sec-lead {
+  line-height: 1.85;
+}
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(600px 300px at 90% -20%, rgba(212, 166, 74, 0.35), transparent 60%),
+    linear-gradient(135deg, var(--navy-deep), var(--brand) 60%, var(--brand-2));
+  box-shadow: 0 24px 60px rgba(15, 34, 64, 0.25);
+}

@@ -69,8 +69,9 @@
     box.querySelector('.lb-next').addEventListener('click', function () {
       show(cur + 1)
     })
+    // أي ضغطة برّا الصورة والأزرار بتسكّر
     box.addEventListener('click', function (e) {
-      if (e.target === box) close()
+      if (!e.target.closest('img, button')) close()
     })
     document.addEventListener('keydown', function (e) {
       if (box.hidden) return
@@ -106,6 +107,35 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
     items.forEach(function (el) {
       io.observe(el)
+    })
+  }
+
+  // ===== عدّاد الأرقام =====
+  var nums = document.querySelectorAll('[data-count]')
+  if (!reduce && 'IntersectionObserver' in window && nums.length) {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return
+        co.unobserve(en.target)
+        var el = en.target
+        var to = Number(el.getAttribute('data-count')) || 0
+        var t0 = null
+        var step = function (ts) {
+          if (t0 === null) t0 = ts
+          var k = Math.min(1, (ts - t0) / 1100)
+          el.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3))))
+          if (k < 1) requestAnimationFrame(step)
+        }
+        el.textContent = '0'
+        requestAnimationFrame(step)
+        // احتياط: لو المتصفح وقّف الحركة (تبويب بالخلفية) الرقم النهائي بيظهر
+        setTimeout(function () {
+          el.textContent = String(to)
+        }, 1600)
+      })
+    }, { threshold: 0.6 })
+    nums.forEach(function (n) {
+      co.observe(n)
     })
   }
 
