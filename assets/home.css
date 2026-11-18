@@ -1357,3 +1357,6 @@ h1, h2, h3, h4,
     linear-gradient(135deg, var(--navy-deep), var(--brand) 60%, var(--brand-2));
   box-shadow: 0 24px 60px rgba(15, 34, 64, 0.25);
 }
+.fgrid.two{grid-template-columns:repeat(2,1fr)}
+@media (max-width:620px){.fgrid.two{grid-template-columns:1fr}}
+#debt .story{align-items:center}
